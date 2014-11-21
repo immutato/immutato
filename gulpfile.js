@@ -116,28 +116,7 @@ gulp.task('build-for-browser', function() {
         .pipe(gulp.dest('website/dist'));
 });
 
-gulp.task('build-benchmarks', function() {
-
-    return gulp.src('./benchmark/all-benchmarks.js')
-        .pipe(guard($.pureCjs({
-            external: {
-                '../..': {
-                    global: 'immutato_prev'
-                },
-                '../lib/immutato': {
-                    global: 'immutato'
-                }
-            },
-            output: 'immutato-benchmarks.js',
-            exports: 'all-benchmarks',
-        })))
-
-    .pipe(gulp.dest('website/javascripts'));
-});
-
-
-gulp.task('dist', ['build-for-browser', 'build-benchmarks']);
-
+gulp.task('dist', ['build-for-browser']);
 
 gulp.task('deploy', function() {
 
