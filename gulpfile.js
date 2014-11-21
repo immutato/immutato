@@ -13,7 +13,6 @@ var loadPlugins = require('gulp-load-plugins');
 var $ = loadPlugins({
     lazy: true
 });
-var through2 = require('through2');
 var tests = 'test/*.js';
 var sources = 'lib/*.js';
 
@@ -22,29 +21,6 @@ function guard(op) {
     return op;
 }
 
-var doGC = through2.obj(function doGC(file, enc, next) {
-    //jshint validthis:true
-    var self = this;
-    setTimeout(function(){
-
-        self.push(file);
-        next();    
-    },10000);
-    
-
-
-});
-
-gulp.task('bench', function() {
-
-    //return gulp.src('./benchmark/current_vs_prev_vs_pojo-creation_bench.js', {read: false})
-    //return gulp.src('./benchmark/current_vs_prev_vs_pojo-change_bench.js', {read: false})
-
-    //return gulp.src('./benchmark/current_vs_prev_vs_pojo-multiple_changes_bench.js', {read: false})
-    return gulp.src('./benchmark/*_bench.js', {read: false})
-        .pipe(doGC)
-        .pipe($.bench());
-});
 
 gulp.task('test', function() {
     return gulp.src(tests)
