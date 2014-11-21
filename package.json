@@ -2,17 +2,17 @@
   "name": "immutato",
   "description": "immutable and typed js data structures",
   "version": "0.3.0",
-  "homepage": "https://github.com/parroit/immutato",
+  "homepage": "https://github.com/immutato/immutato",
   "author": {
     "name": "Andrea Parodi",
     "email": "andrea.parodi@ebansoftware.net"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/parroit/immutato.git"
+    "url": "git://github.com/immutato/immutato.git"
   },
   "bugs": {
-    "url": "https://github.com/parroit/immutato/issues"
+    "url": "https://github.com/immutato/immutato/issues"
   },
   "licenses": [
     {
