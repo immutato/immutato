@@ -1,0 +1,14 @@
+{
+    "node": true,
+    "esnext": true,
+    "immed": true,
+    "newcap": true,
+    "quotmark": "single",
+    "latedef": false,
+    "globals": {
+        "describe": true,
+        "it": true,
+        "before": true,
+        "after": true
+    }
+}
